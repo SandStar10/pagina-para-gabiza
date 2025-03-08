@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario</title>
+</head>
+<body>
+    <h2>Cuestionario</h2>
+    <form id="formulario">
+        <label>Nombre: <input type="text" id="nombre" required></label><br>
+        <label>Edad: <input type="number" id="edad" required></label><br>
+        <label>Altura (m): <input type="number" step="0.01" id="altura" required></label><br>
+        <label>¿Eres estudiante? <select id="eres_estudiante"><option value="Sí">Sí</option><option value="No">No</option></select></label><br>
+        <label>Color favorito: <input type="text" id="color_favorito" required></label><br>
+        <label>Número de la suerte: <input type="number" id="numero_de_la_suerte" required></label><br>
+        <label>Horas de sueño: <input type="number" id="horas_sueno" required></label><br>
+        <label>¿Te gusta la programación? <select id="te_gusta_programacion"><option value="Sí">Sí</option><option value="No">No</option></select></label><br>
+        <button type="button" onclick="mostrarRespuestas()">Enviar</button>
+    </form>
+
+    <h3>Resumen de Respuestas:</h3>
+    <p id="resumen"></p>
+
+    <script>
+        function mostrarRespuestas() {
+            let nombre = document.getElementById("nombre").value;
+            let edad = document.getElementById("edad").value;
+            let altura = document.getElementById("altura").value;
+            let eres_estudiante = document.getElementById("eres_estudiante").value;
+            let color_favorito = document.getElementById("color_favorito").value;
+            let numero_de_la_suerte = document.getElementById("numero_de_la_suerte").value;
+            let horas_sueno = document.getElementById("horas_sueno").value;
+            let te_gusta_programacion = document.getElementById("te_gusta_programacion").value;
+
+            document.getElementById("resumen").innerHTML = `
+                <b>Nombre:</b> ${nombre} <br>
+                <b>Edad:</b> ${edad} <br>
+                <b>Altura:</b> ${altura} m <br>
+                <b>¿Eres estudiante?:</b> ${eres_estudiante} <br>
+                <b>Color favorito:</b> ${color_favorito} <br>
+                <b>Número de la suerte:</b> ${numero_de_la_suerte} <br>
+                <b>Horas de sueño:</b> ${horas_sueno} <br>
+                <b>¿Te gusta la programación?:</b> ${te_gusta_programacion}
+            `;
+        }
+    </script>
+</body>
+</html>
